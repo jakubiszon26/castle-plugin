@@ -1,6 +1,6 @@
 main: com.multiportal.castle.castle
 name: castle
 version: 1.0.0
-author: jakubiszon26
+author: MultiPortal, jakubiszon26, Pixel
 description: castle. capture the flag like minigame
 api-version: 1.14
