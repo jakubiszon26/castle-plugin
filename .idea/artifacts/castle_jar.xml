@@ -1,0 +1,9 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="castle:jar">
+    <output-path>$USER_HOME$/spigotmc/plugins</output-path>
+    <root id="archive" name="castle.jar">
+      <element id="module-output" name="castle" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/Depedencies/spigot-api-1.16.5.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>
