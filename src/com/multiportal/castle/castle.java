@@ -8,9 +8,6 @@ public class castle extends JavaPlugin {
     @Override
     public void onEnable() {
         getServer().getPluginManager().registerEvents(new playerJoinGame(), this);
-        //WARING!!!
-        //If you won't credit us, you might get CONFLICT WITH LAW!!!
-        //For more info view GPL 3.0 license
         getServer().getConsoleSender().sendMessage(ChatColor.YELLOW + "  __  __       _ _   _ ____            _        _");
         getServer().getConsoleSender().sendMessage(ChatColor.YELLOW + " |  \\/  |_   _| | |_(_)  _ \\ ___  _ __| |_ __ _| |");
         getServer().getConsoleSender().sendMessage(ChatColor.YELLOW + " | |\\/| | | | | | __| | |_) / _ \\| '__| __/ _` | |");
