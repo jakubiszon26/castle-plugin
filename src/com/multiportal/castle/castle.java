@@ -7,7 +7,11 @@ import org.bukkit.plugin.java.JavaPlugin;
 public class castle extends JavaPlugin {
     @Override
     public void onEnable() {
+        //events
         getServer().getPluginManager().registerEvents(new playerJoinGame(), this);
+        //comands
+
+        //welcome message in console
         getServer().getConsoleSender().sendMessage(ChatColor.YELLOW + "  __  __       _ _   _ ____            _        _");
         getServer().getConsoleSender().sendMessage(ChatColor.YELLOW + " |  \\/  |_   _| | |_(_)  _ \\ ___  _ __| |_ __ _| |");
         getServer().getConsoleSender().sendMessage(ChatColor.YELLOW + " | |\\/| | | | | | __| | |_) / _ \\| '__| __/ _` | |");
