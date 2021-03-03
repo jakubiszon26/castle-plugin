@@ -22,6 +22,7 @@ public class playerJoinGame implements Listener {
         if (playersCount > maxPlayers) {
             player.sendMessage(ChatColor.RED + "W tej grze jest już maksymalna liczba osób, przełączymy cię w obserwatora");
             player.setGameMode(GameMode.SPECTATOR);
+            players.put(player.getDisplayName(), "spectator");
 
         } else {
             //define team armor in variables
