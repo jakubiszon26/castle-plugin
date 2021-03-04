@@ -3,9 +3,9 @@ package com.multiportal.castle;
 import com.multiportal.castle.events.playerDeathEvent;
 import com.multiportal.castle.events.playerJoinGame;
 import com.multiportal.castle.events.playerQuitGame;
+import com.multiportal.castle.events.playerRespawn;
 import org.bukkit.ChatColor;
 import org.bukkit.plugin.java.JavaPlugin;
-
 public class castle extends JavaPlugin {
     @Override
     public void onEnable() {
@@ -13,6 +13,8 @@ public class castle extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new playerJoinGame(), this);
         getServer().getPluginManager().registerEvents(new playerQuitGame(), this);
         getServer().getPluginManager().registerEvents(new playerDeathEvent(), this);
+        getServer().getPluginManager().registerEvents(new playerRespawn(), this);
+
 
 
         //commands

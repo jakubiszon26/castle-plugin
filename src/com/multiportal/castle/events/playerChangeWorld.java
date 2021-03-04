@@ -5,17 +5,17 @@ import org.bukkit.*;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
-import org.bukkit.event.player.PlayerJoinEvent;
+import org.bukkit.event.player.PlayerChangedWorldEvent;
 import org.bukkit.inventory.ItemStack;
 
 import static com.multiportal.castle.players.playersManager.players;
 import static org.bukkit.Material.IRON_CHESTPLATE;
-public class playerJoinGame implements Listener {
+
+public class playerChangeWorld implements Listener {
     @EventHandler
-    public static void onPlayerJoin(PlayerJoinEvent joinEvent) {
-        //set max number of players in game (in future in config.yaml)
+    public static void onPlayerWorldChange(PlayerChangedWorldEvent event) {
         var maxPlayers = 2;
-        Player player = joinEvent.getPlayer();
+        Player player = event.getPlayer();
         if (player.getWorld().getName().contains("cstl")) {
             World world = player.getWorld();
             var playersCount = world.getPlayers().size();
@@ -44,14 +44,15 @@ public class playerJoinGame implements Listener {
                     player.getInventory().setChestplate(diamondTeamChestPlate[0]);
                     player.teleport(new Location(player.getWorld(), 203, 72, -34));
                 }
-                player.sendMessage(ChatColor.BLUE + "Jestes w druzynie " + players.get(player.getDisplayName()).team);
+                player.sendMessage(ChatColor.BLUE + "Jestes w druzynie " + players.get(player.getDisplayName()));
 
 
             }
-            //iron spawn TELEPORT:
-            //player.teleport(new Location(player.getWorld(), 193, 72, -44));
-            //diamond spawn TELEPORT:
-            //player.teleport(new Location(player.getWorld(), 203, 72, -34));
+        }else {
+            players.remove(player.getDisplayName());
         }
     }
+
+
 }
+
