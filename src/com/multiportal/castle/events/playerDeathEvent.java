@@ -30,9 +30,9 @@ public class playerDeathEvent implements Listener {
             assert killer != null;
             PlayerObject killerInfo = players.get(killer.getDisplayName());
             killerInfo.kills += 1;
-            killer.sendMessage("masz " + killerInfo.kills + "zabójstw");
+            killer.sendMessage(ChatColor.BLUE + "masz " + killerInfo.kills + "zabójstw");
             teleportPlayerToSpawn(player, playerInfo.team);
-            killer.setHealth(4);
+            killer.setHealth(6);
         }
 
 

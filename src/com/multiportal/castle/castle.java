@@ -7,14 +7,16 @@ import com.multiportal.castle.events.playerRespawn;
 import org.bukkit.ChatColor;
 import org.bukkit.plugin.java.JavaPlugin;
 public class castle extends JavaPlugin {
+    public static castle plugin; //create the variable
+
     @Override
     public void onEnable() {
         //events
+        plugin = this;
         getServer().getPluginManager().registerEvents(new playerJoinGame(), this);
         getServer().getPluginManager().registerEvents(new playerQuitGame(), this);
         getServer().getPluginManager().registerEvents(new playerDeathEvent(), this);
         getServer().getPluginManager().registerEvents(new playerRespawn(), this);
-
 
 
         //commands
