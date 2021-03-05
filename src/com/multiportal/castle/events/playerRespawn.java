@@ -27,12 +27,19 @@ public class playerRespawn implements Listener {
                 }
             }.runTaskLater(plugin, 1);
             //give player his team items
+            player.getInventory().clear();
             if (playerInfo.team.equals("iron")) {
                 ItemStack[] ironTeamChestPlate = {new ItemStack(IRON_CHESTPLATE)};
+                ItemStack[] diamondSword = {new ItemStack(Material.DIAMOND_SWORD)};
                 player.getInventory().setChestplate(ironTeamChestPlate[0]);
+                player.getInventory().setItem(1, diamondSword[0]);
+
             } else if (playerInfo.team.equals("diamond")) {
                 ItemStack[] diamondTeamChestPlate = {new ItemStack(Material.DIAMOND_CHESTPLATE)};
+                ItemStack[] ironSword = {new ItemStack(Material.IRON_SWORD)};
                 player.getInventory().setChestplate(diamondTeamChestPlate[0]);
+                player.getInventory().setItem(1, ironSword[0]);
+
 
             }
         }

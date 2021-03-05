@@ -18,8 +18,9 @@ public class playerChangeWorld implements Listener {
         var maxPlayers = 2;
         Player player = joinEvent.getPlayer();
         if (player.getWorld().getName().contains("cstl")) {
-            //give player random team and add him to players hashmap
+
             player.getInventory().clear();
+            //give player random team and add him to players hashmap
             defineTeamAndAddToPlayersManager(player.getWorld(), maxPlayers, player);
             PlayerObject playerInfo = players.get(player.getDisplayName());
             player.sendMessage(ChatColor.GREEN + "Jesteś w dróżynie: " + playerInfo.team);

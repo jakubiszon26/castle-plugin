@@ -4,3 +4,7 @@ version: 1.0.0
 author: MultiPortal, jakubiszon26, Pixel
 description: castle. capture the flag like minigame
 api-version: 1.14
+commands:
+  castlestatus:
+    description: To check is castle plugin on server
+    usage: /<command>

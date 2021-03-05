@@ -1,5 +1,6 @@
 package com.multiportal.castle;
 
+import com.multiportal.castle.commands.status;
 import com.multiportal.castle.events.playerDeathEvent;
 import com.multiportal.castle.events.playerJoinGame;
 import com.multiportal.castle.events.playerQuitGame;
@@ -20,6 +21,7 @@ public class castle extends JavaPlugin {
 
 
         //commands
+        this.getCommand("castlestatus").setExecutor(new status());
 
         //welcome message in console
         getServer().getConsoleSender().sendMessage(ChatColor.YELLOW + "  __  __       _ _   _ ____            _        _");

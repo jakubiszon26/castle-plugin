@@ -22,7 +22,6 @@ public class playerDeathEvent implements Listener {
             var world = player.getWorld();
             //send message on world
             world.getPlayers().forEach(p -> p.sendMessage(ChatColor.RED + "Gracz " + player.getDisplayName() + " został zabity przez " + player.getKiller()));
-            player.sendMessage(ChatColor.GREEN + "udało ci się przeżyć " + player.getPlayerTime());
             player.spigot().respawn();
             //get player team name from players info hashmap
             PlayerObject playerInfo = players.get(player.getDisplayName());
@@ -33,6 +32,9 @@ public class playerDeathEvent implements Listener {
             killer.sendMessage(ChatColor.BLUE + "masz " + killerInfo.kills + "zabójstw");
             teleportPlayerToSpawn(player, playerInfo.team);
             killer.setHealth(6);
+            //##############only for test delete later
+            teleportPlayerToSpawn(killer, killerInfo.team);
+
         }
 
 
